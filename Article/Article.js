@@ -88,27 +88,76 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+//  Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+//   <div class="article">
+//     <h2>{title of the article}</h2>
+//     <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+//     {three separate paragraph elements}
 
-    <span class='expandButton'></span>
-  </div>
+//     <span class='expandButton'></span>
+//   </div>
 
-  Hint: You will need to use createElement more than once here!
+//   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+//   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+function newsfeedComponentMaker (titleData, dateData, fpData, spData, tpData){
+  const titleDiv = document.createElement('div')
+  titleDiv.classList.add('title');
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  const dateDiv = document.createElement('div')
+  dateDiv.classList.add('date');
 
-*/
+  const firstPDiv = document.createElement('div')
+  firstPDiv.classList.add('firstParagraph');
+
+  const secondPDiv = document.createElement('div')
+  secondPDiv.classList.add('secondParagraph');
+
+  const thirdPDiv = document.createElement('div')
+  thirdPDiv.classList.add('thirdParagraph');
+/////////////////// Created Divs ///////////////////////
+  const title = document.createElement('div')
+  title.textContent = titleData;
+
+  const date = document.createElement('p')
+  date.textContent = dateData;
+
+  const firstParagraph = document.createElement('p')
+  firstParagraph.textContent = fpData;
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+  // Step 3: return the entire component.
+
+  // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+  // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+
