@@ -33,3 +33,53 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function menuComponentMaker(menuArray){
+  const menu = document.createElement('div')
+  menu.classList.add('menu');
+
+  const ul = document.createElement('ul')
+
+  menu.appendChild(ul)
+
+menuItems.forEach((menuObj) => {
+  const listItems = document.createElement('li');
+  listItems.textContent = menuObj
+  ul.appendChild(listItems);
+});
+
+const menuButton = document.querySelector('.menu-button')
+menuButton.addEventListener('click', () => {
+  menu.classList.toggle('menu--open')
+});
+
+return menu
+
+}
+
+document.body.appendChild(menuComponentMaker (menuItems));
+// const listItemOne = document.createElement('li')
+//   listItemOne.classList.add('listItem');
+
+//   const listItemTwo = document.createElement('li')
+//   listItemTwo.classList.add('listItem');
+
+//   const listItemThree = document.createElement('li')
+//   listItemThree.classList.add('listItem');
+
+//   const listItemFour = document.createElement('li')
+//   listItemFour.classList.add('listItem');
+
+//   const listItemFive = document.createElement('li')
+//   listItemFive.classList.add('listItem');
+
+//   const listItemSix = document.createElement('li')
+//   listItemSix.classList.add('listItem');
+
+//   menu.appendChild(ul)
+//   ul.appendChild(listItemOne)
+//   ul.appendChild(listItemTwo)
+//   ul.appendChild(listItemThree)
+//   ul.appendChild(listItemFour)
+//   ul.appendChild(listItemFive)
+//   ul.appendChild(listItemSix)
