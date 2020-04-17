@@ -120,29 +120,33 @@ function newsfeedComponentMaker(
   date.classList.add("date");
   date.textContent = dateData;
 
-  const firstP = document.createElement("p");
-  firstP.classList.add("paragraphElements");
-  firstP.textContent = firstParagraphData;
+  const firstParagraph = document.createElement("p");
+  firstParagraph.classList.add("paragraphElements");
+  firstParagraph.textContent = firstParagraphData;
 
-  const secondP = document.createElement("p");
-  secondP.classList.add("paragraphElements");
-  secondP.textContent = secondParagraphData;
+  const secondParagraph = document.createElement("p");
+  secondParagraph.classList.add("paragraphElements");
+  secondParagraph.textContent = secondParagraphData;
 
-  const thirdP = document.createElement("p");
-  thirdP.classList.add("paragraphElements");
-  thirdP.textContent = thirdParagraphData;
+  const thirdParagraph = document.createElement("p");
+  thirdParagraph.classList.add("paragraphElements");
+  thirdParagraph.textContent = thirdParagraphData;
 
-const expandSpan = document.createElement('span')
-expandSpan.classList.add('expandButton')
-expandSpan.addEventListener('click', () => {
-  article.classList.toggle('article-open');
-})
+  const expandSpan = document.createElement("span");
+  expandSpan.classList.add("expandButton");
+  expandSpan.textContent = 'Right here!'
+  expandSpan.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+
+
+
+  });
 
   article.appendChild(title);
   article.appendChild(date);
-  article.appendChild(firstP);
-  article.appendChild(secondP);
-  article.appendChild(thirdP);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
   article.appendChild(expandSpan);
 
   return article;
@@ -156,8 +160,9 @@ data.forEach((dataObj) => {
     dataObj.date,
     dataObj.firstParagraph,
     dataObj.secondParagraph,
-    dataObj.thirdParagraph);
-    articles.appendChild(dataComponent)
+    dataObj.thirdParagraph
+  );
+  articles.appendChild(dataComponent);
 });
 
 // console.log(newsfeedComponentMaker);
