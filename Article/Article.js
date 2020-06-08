@@ -113,3 +113,64 @@ const data = [
 
 */
 
+function newsfeedComponentMaker(
+  titleData,
+  dateData,
+  firstParagraphData,
+  secondParagraphData,
+  thirdParagraphData
+) {
+  const article = document.createElement("div");
+  article.classList.add("article");
+
+  const title = document.createElement("h2");
+  title.textContent = titleData;
+
+  const date = document.createElement("p");
+  date.classList.add("date");
+  date.textContent = dateData;
+
+  const firstParagraph = document.createElement("p");
+  firstParagraph.classList.add("paragraphElements");
+  firstParagraph.textContent = firstParagraphData;
+
+  const secondParagraph = document.createElement("p");
+  secondParagraph.classList.add("paragraphElements");
+  secondParagraph.textContent = secondParagraphData;
+
+  const thirdParagraph = document.createElement("p");
+  thirdParagraph.classList.add("paragraphElements");
+  thirdParagraph.textContent = thirdParagraphData;
+
+  const expandSpan = document.createElement("span");
+  expandSpan.classList.add("expandButton");
+  expandSpan.textContent = 'Right here!'
+  expandSpan.addEventListener("click", () => {
+    article.classList.toggle("article-open");
+
+
+
+  });
+
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
+  article.appendChild(expandSpan);
+
+  return article;
+}
+
+const articles = document.querySelector(".articles");
+
+data.forEach((dataObj) => {
+  const dataComponent = newsfeedComponentMaker(
+    dataObj.title,
+    dataObj.date,
+    dataObj.firstParagraph,
+    dataObj.secondParagraph,
+    dataObj.thirdParagraph
+  );
+  articles.appendChild(dataComponent);
+});
