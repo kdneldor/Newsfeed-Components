@@ -1,12 +1,12 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
 let menuItems = [
-  'Students',
-  'Faculty',
+  "Students",
+  "Faculty",
   "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
+  "Tech Trends",
+  "Music",
+  "Log Out",
 ];
 
 /* 
@@ -34,27 +34,26 @@ let menuItems = [
   
 */
 
-function menuComponentMaker(menuArray){
-  const menu = document.createElement('div')
-  menu.classList.add('menu');
+function menuComponentMaker() {
+  const menuElement = document.createElement("div");
+  menuElement.classList.add("menu");
 
-  const ul = document.createElement('ul')
+  const ul = document.createElement("ul");
 
-  menu.appendChild(ul)
+  menuElement.appendChild(ul);
 
-menuItems.forEach((menuObj) => {
-  const listItems = document.createElement('li');
-  listItems.textContent = menuObj
-  ul.appendChild(listItems);
-});
+  menuItems.forEach((menuObj) => {
+    const listItems = document.createElement("li");
+    listItems.textContent = menuObj;
+    ul.appendChild(listItems);
+  });
 
-const menuButton = document.querySelector('.menu-button')
-menuButton.addEventListener('click', () => {
-  menu.classList.toggle('menu--open')
-});
+  const menuButton = document.querySelector(".menu-button");
+  menuButton.addEventListener("click", () => {
+    menuElement.classList.toggle("menu--open");
+  });
 
-return menu
-
+  return menuElement;
 }
 
-document.body.appendChild(menuComponentMaker (menuItems));
+document.body.appendChild(menuComponentMaker(menuItems));
