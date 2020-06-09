@@ -120,8 +120,8 @@ function newsfeedComponentMaker(
   secondParagraphData,
   thirdParagraphData
 ) {
-  const article = document.createElement("div");
-  article.classList.add("article");
+  const articleElement = document.createElement("div");
+  articleElement.classList.add("article");
 
   const title = document.createElement("h2");
   title.textContent = titleData;
@@ -146,20 +146,20 @@ function newsfeedComponentMaker(
   expandSpan.classList.add("expandButton");
   expandSpan.textContent = 'Right here!'
   expandSpan.addEventListener("click", () => {
-    article.classList.toggle("article-open");
+    articleElement.classList.toggle("article-open");
 
 
 
   });
 
-  article.appendChild(title);
-  article.appendChild(date);
-  article.appendChild(firstParagraph);
-  article.appendChild(secondParagraph);
-  article.appendChild(thirdParagraph);
-  article.appendChild(expandSpan);
+  articleElement.appendChild(title);
+  articleElement.appendChild(date);
+  articleElement.appendChild(firstParagraph);
+  articleElement.appendChild(secondParagraph);
+  articleElement.appendChild(thirdParagraph);
+  articleElement.appendChild(expandSpan);
 
-  return article;
+  return articleElement;
 }
 
 const articles = document.querySelector(".articles");
